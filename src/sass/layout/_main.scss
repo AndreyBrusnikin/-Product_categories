@@ -1,0 +1,200 @@
+body {
+  font-family: $base-font-family;
+  font-size: 14px;
+  line-height: 1.7;
+  min-width: 320px;
+  color: $base-text-color;
+}
+
+#wrapper {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+form {
+	margin-top: 50px;
+}
+.container {
+	max-width: 1090px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.styled-checkbox {
+	position: absolute; // take it out of document flow
+	opacity: 0; // hide it
+
+	& + label {
+		position: relative;
+		cursor: pointer;
+		padding: 0;
+	}
+
+	& + label:before {
+		content: '';
+		margin-right: 10px;
+		display: inline-block;
+		vertical-align: text-top;
+		width: 17px;
+		height: 17px;
+		background: white;
+		border-radius: 3px;
+	}
+
+	&:hover + label:before {
+		background: $violet;
+	}
+
+	&:checked + label:before {
+		background: $violet;
+	}
+
+	&:disabled + label {
+		color: #b8b8b8;
+		cursor: auto;
+	}
+
+	&:disabled + label:before {
+		box-shadow: none;
+		background: #ddd;
+	}
+
+	&:checked + label:after {
+		content: '';
+		position: absolute;
+		left: 3px;
+		top: 8px;
+		background: white;
+		width: 2px;
+		height: 2px;
+		box-shadow:
+						2px 0 0 white,
+						4px 0 0 white,
+						4px -2px 0 white,
+						4px -4px 0 white,
+						4px -6px 0 white,
+						4px -8px 0 white;
+		transform: rotate(45deg);
+	}
+}
+
+.checkbox-holder{
+	background-color: $custom-black;
+	max-width: 591px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	border-radius: 10px;
+
+	&:before{
+		content: '';
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		transform: rotate(45deg);
+		top: -7px;
+		left: 20px;
+		background-color: $custom-black;
+
+	}
+}
+
+.checkbox-nav-holder{
+	background-color: $dark-blue;
+	margin: 20px;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.icon-holder {
+	background-color: $violet;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	position: relative;
+}
+
+.icon-right{
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	color: $white;
+
+	&.icon-down{
+		transform: rotate(90deg);
+	}
+}
+
+.checkbox{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 20px;
+}
+
+.title-nav{
+	padding-bottom: 35px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.checkbox-nav-sks{
+
+	input{
+		margin-right: 25px;
+	}
+}
+
+.checkbox-nav-tools{
+
+	 input{
+		 margin-right: 45px;
+	 }
+}
+
+.checkbox-nav{
+
+	input{
+		margin-right: 10px;
+	}
+}
+
+.checkbox-status-holder{
+	background-color: $dark-blue;
+	margin: 0 20px 20px 20px;
+	padding: 20px;
+	border-radius: 10px;
+
+}
+
+.checkbox-status{
+	display: flex;
+	padding-top: 10px;
+	input{
+		margin-right: 10px;
+	}
+}
+
+.checkbox-active{
+	margin-right: 40px;
+}
+
+.button-holder{
+	width: 100%;
+	display: flex;
+	padding: 0 20px 20px 20px;
+	button{
+		margin: 5px;
+		padding: 10px;
+		background-color: transparent;
+		color: $white;
+		border: 2px solid $custom-red;
+		border-radius: 20px;
+		font-weight: 600;
+		width: 50%;
+		transition: all .5s;
+
+		&:hover{
+			background-color: $custom-red;
+		}
+	}
+}
